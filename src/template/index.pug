@@ -8,3 +8,16 @@ html(lang='en')
 		link(rel="stylesheet", href="assets/styles/main.css")
 		script(async, src="assets/scripts/app.js")
 	body
+		h1 Simple modal  
+			a.link(href="#", data-target="modal") Modal  
+			a.link(href="#", data-target="modal2") Modal2
+		.modal.mod1(data-title='modal')
+			.modal-body
+				.modal-container.shadowBox
+					span.close X
+					h1 Modal 1
+		.modal.mod(data-title='modal2')
+			.modal-body
+				.modal-container.shadowBox
+					span.close X
+					h1 Modal 2
