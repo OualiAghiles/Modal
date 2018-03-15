@@ -66,13 +66,20 @@ function myModal(nscModal, options) {
           }
         }, false)
         close(modal)
-      }
+
+    }
     })
+
   }
   document.addEventListener('keypress', function(e) {
     if (e.keyCode === 27) {
-      var modal = document.querySelector(nscModal + '.is-visible')
-      modal.classList.remove('is-visible')
+      var modals = [].slice.call(document.querySelectorAll('.modal.is-visible'))
+      console.log(modals);
+      if(modals.length > 0) {
+        //modals[modals.length - 1].classList.remove('is-visible')
+        e.cancelBubble = true
+        e.preventDefault()
+      }
     }
   })
 }
@@ -82,8 +89,10 @@ myModal('#modal', {
   },
     fullSize: true
 })
+
 myModal('#modal1', {
   background: {
-    color: "rgba(0,0,0,0.8)",
-  }
+    visible: false
+  },
+    fullSize: false
 })
